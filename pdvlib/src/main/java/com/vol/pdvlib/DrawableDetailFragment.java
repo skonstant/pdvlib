@@ -58,6 +58,7 @@ public class DrawableDetailFragment extends Fragment {
 
         if (mItem != null) {
             ((AppCompatImageView) rootView.findViewById(R.id.drawable_detail)).setImageResource(mItem.drawable);
+            ((AppCompatImageView) rootView.findViewById(R.id.drawable_detail_full)).setImageResource(mItem.drawable);
 
             Drawable drawable = ResourcesCompat.getDrawable(getResources(), mItem.drawable, getContext().getTheme());
             String text = "Drawable name: " + mItem.id + "\n\n" +

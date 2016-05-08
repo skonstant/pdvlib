@@ -15,9 +15,16 @@
     <ImageView
         android:id="@+id/drawable_detail"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:padding="16dp"
         android:scaleType="centerInside"/>
 
+
+    <ImageView
+        android:id="@+id/drawable_detail_full"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:padding="16dp"
+        android:scaleType="centerCrop"/>
 
 </LinearLayout>

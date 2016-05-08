@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -27,6 +28,7 @@ import com.vol.pdvlib.dummy.DummyContent;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * An activity representing a list of Drawables. This activity
@@ -61,6 +63,27 @@ public class DrawableListActivity extends AppCompatActivity {
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
 
+        TextView info = (TextView) findViewById(R.id.info);
+
+        String sdpi = "";
+
+        int dpi = getResources().getDisplayMetrics().densityDpi;
+        if (dpi < DisplayMetrics.DENSITY_MEDIUM) {
+            sdpi = "ldpi";
+        } else if (dpi < DisplayMetrics.DENSITY_HIGH) {
+            sdpi = "mdpi";
+        } else if (dpi < DisplayMetrics.DENSITY_XHIGH) {
+            sdpi = "hdpi";
+        } else if (dpi <  DisplayMetrics.DENSITY_XXHIGH) {
+            sdpi = "xhdpi";
+        } else if (dpi < DisplayMetrics.DENSITY_XXXHIGH) {
+            sdpi = "xxhdpi";
+        } else {
+            sdpi = "xxxhdpi";
+        }
+
+        info.setText("This device is: " + sdpi + "\nLanguage is: " + Locale.getDefault().getLanguage());
+
         if (findViewById(R.id.drawable_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
@@ -68,6 +91,7 @@ public class DrawableListActivity extends AppCompatActivity {
             // activity should be in two-pane mode.
             mTwoPane = true;
         }
+
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
