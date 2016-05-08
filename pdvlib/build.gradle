@@ -42,7 +42,7 @@ ext {
 	siteUrl = 'https://github.com/skonstant/pdvlib'
 	gitUrl = 'https://github.com/skonstant/pdvlib.git'
 
-	libraryVersion = '1.0'
+	libraryVersion = '1.1'
 
 	developerId = 'skonstant'
 	developerName = 'Stéphane Konstantaropoulos'
