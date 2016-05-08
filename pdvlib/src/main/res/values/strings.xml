@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ProjectDrawablesViewerLibrary</string>
+
+    <string name="title_drawable_detail">Drawable Detail</string>
+    <string name="drawables_list">Drawables list</string>
+    <string name="search">search</string>
+</resources>
